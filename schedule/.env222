@@ -1,0 +1,12 @@
+
+
+module.exports = {
+    authSecret: 'kmdlaknsdsjdlkja54793798172398172351321',
+    db: {
+        host: '127.0.0.1',
+        port: 5432,
+        database: 'rsa',
+        user: 'postgres',
+        password: '150396'
+    }
+}

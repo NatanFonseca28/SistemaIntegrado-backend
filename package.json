@@ -1,0 +1,34 @@
+{
+    "name": "backend",
+    "version": "2.0.0",
+    "description": "Backend",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "production": "pm2 start index.js --name sgi-rsa"
+    },
+    "keywords": [],
+    "author": "NatanFonseca",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "1.18.3",
+        "consign": "0.1.6",
+        "cors": "2.8.4",
+        "express": "4.16.3",
+        "jwt-simple": "^0.5.6",
+        "knex": "^0.21.6",
+        "moment": "2.22.2",
+        "mongoose": "~5.10.7",
+        "node-schedule": "1.3.0",
+        "nodemailer": "^6.4.17",
+        "objection": "^2.1.3",
+        "passport": "0.4.0",
+        "passport-jwt": "4.0.0",
+        "pg": "8.3.3",
+        "pm2": "^4.5.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.5"
+    }
+}

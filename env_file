@@ -1,0 +1,15 @@
+module.exports = {
+    authSecret: ''
+}
+
+
+module.exports = {
+    authSecret: 'kmdlaknsdsjdlkja54793798172398172351321',
+    db: {
+        host: 'mydatabase.c5q8yjik4bo6.us-east-2.rds.amazonaws.com',
+        port: 5432,
+        database: 'postgres',
+        user: 'rsa',
+        password: 'ka150396'
+    }
+}
