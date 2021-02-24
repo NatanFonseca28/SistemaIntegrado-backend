@@ -78,8 +78,15 @@ module.exports = (app) => {
         .route("/memos")
         .all(app.config.passport.authenticate())
         .post(app.service.createMemo.save)
-        .get(app.service.createMemo.get)
-        .delete(app.service.createMemo.remove);
+        .get(app.service.createMemo.get);
+
+
+
+    app
+        .route("/memos/:_id")
+        .all(app.config.passport.authenticate())
+        .delete(app.service.createMemo.remove)
+        .get(app.service.createMemo.getById);
 
 
 
