@@ -69,7 +69,6 @@ module.exports = (app) => {
 
     /* -------------------------------------------------------------------------- */
 
-
     /* -------------------------------------------------------------------------- */
     /*               Rota de inserção, busca e deleção de memorandos              */
     /* -------------------------------------------------------------------------- */
@@ -80,24 +79,32 @@ module.exports = (app) => {
         .post(app.service.createMemo.save)
         .get(app.service.createMemo.get);
 
-
-
     app
         .route("/memos/:_id")
         .all(app.config.passport.authenticate())
         .delete(app.service.createMemo.remove)
         .get(app.service.createMemo.getById);
 
-
-
-
+    /* -------------------------------------------------------------------------- */
 
     /* -------------------------------------------------------------------------- */
     /*               Rota de Envio de e-mail via NodeMailer                       */
     /* -------------------------------------------------------------------------- */
 
+    /* -------------------------------------------------------------------------- */
+    /*               Rota de inserção, busca e deleção de Circulares              */
+    /* -------------------------------------------------------------------------- */
+
+    app
+        .route("/circs")
+        .all(app.config.passport.authenticate())
+        .post(app.service.createCircular.save)
+        .get(app.service.createCircular.get);
+
+    /* -------------------------------------------------------------------------- */
+
     app
         .route("/send-mail")
         .all(app.config.passport.authenticate())
-        .post(app.config.sendMail.sendMail)
+        .post(app.config.sendMail.sendMail);
 };

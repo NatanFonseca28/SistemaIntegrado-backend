@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-module.exports = (app) => {
+module.exports = (userTo, subjectMail, contentMail) => {
 
     const config = {
         host: "smtp.mailtrap.io",
@@ -13,11 +13,18 @@ module.exports = (app) => {
     const transporter = nodemailer.createTransport(config);
 
     const sendMail = (req, res) => {
+        /*         const message = {
+                    "from": "natanfs28@gmail.com",
+                    "to": "natanfs28@gmail.com",
+                    "subject": "TESTE TESTE",
+                    "text": "Lorem TESTE"
+                } */
+
         const message = {
             from: "natanfs28@gmail.com",
-            to: "natanfs28@gmail.com",
-            subject: "TESTE TESTE",
-            text: "Lorem TESTE"
+            to: req.body.to,
+            subject: req.body.subtitle,
+            text: req.body.content
         }
 
         transporter.sendMail(message, (err, info) => {
