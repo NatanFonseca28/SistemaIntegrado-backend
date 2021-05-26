@@ -28,7 +28,6 @@ module.exports = (app) => {
     /* -------------------------------------------------------------------------- */
     /*                        método assíncrono de inserção                       */
     /* -------------------------------------------------------------------------- */
-
     const save = async(req, res) => {
         const circFields = {
             title: req.body.title,

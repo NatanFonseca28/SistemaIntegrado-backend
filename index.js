@@ -4,6 +4,8 @@ const app = require('express')()
 const consign = require('consign')
 const db = require('./config/db')
 const mongoose = require('mongoose')
+const ejs = require("ejs");
+
 
 require('./config/mongodb')
 
@@ -31,7 +33,7 @@ consign()
     /* Serviço para envio de e-mails a partir do sistema */
     .then('./config/sendMail.js')
     /* Sistema de rotas */
-    .then('./config/routes.js')
+    .then('./routers/routes.js')
     .into(app)
 
 

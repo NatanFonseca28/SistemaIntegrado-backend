@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------- */
 /*                               ROTAS DAS APIs                               */
 /* -------------------------------------------------------------------------- */
-const admin = require("./admin");
+const admin = require("../config/admin");
 
 module.exports = (app) => {
     app.post("/signup", app.api.user.save);
@@ -83,8 +83,8 @@ module.exports = (app) => {
         .route("/memos/:_id")
         .all(app.config.passport.authenticate())
         .delete(app.service.createMemo.remove)
+        .post(app.service.createMemo.printPdf)
         .get(app.service.createMemo.getById);
-
     /* -------------------------------------------------------------------------- */
 
     /* -------------------------------------------------------------------------- */
